@@ -81,15 +81,15 @@ Vagrant.configure(2) do |config|
       sudo apt-get -y install openjdk-7-jdk
     SHELL
 
-  solr_distribution_dir = "/home/vagrant/solr-4.10.3"
-  nutch_distribution_dir = "/home/vagrant/apache-nutch-1.9"
+  solr_distribution_dir = "/home/vagrant/solr-4.10.4"
+  nutch_distribution_dir = "/home/vagrant/apache-nutch-1.10"
 
   config.vm.provision "apache-installs", type: "shell", privileged: false, inline: <<-SHELL
     echo Downloading and installing Apache software
-    wget -nv -N "http://apache.mirror.vexxhost.com/lucene/solr/4.10.3/solr-4.10.3.tgz"
-    tar -xf "solr-4.10.3.tgz"
-    wget -nv -N "http://apache.parentingamerica.com/nutch/1.9/apache-nutch-1.9-bin.tar.gz"
-    tar -xf "apache-nutch-1.9-bin.tar.gz"
+    wget -nv -N "http://apache.mirror.vexxhost.com/lucene/solr/4.10.4/solr-4.10.4-src.tgz"
+    tar -xf "solr-4.10.4.tgz"
+    wget -nv -N "http://apache.parentingamerica.com/nutch/1.10/apache-nutch-1.10-bin.tar.gz"
+    tar -xf "apache-nutch-1.10-bin.tar.gz"
   SHELL
 
   solr_home_dir = "/vagrant/solr"
